@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Complementarity of React.js and Web Components</title>
+
+		<meta name="description" content="Presentation for React.js Conf 2015">
+		<meta name="author" content="Andrew Rota">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../node_modules/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="../node_modules/reveal.js/css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="custom.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = '../node_modules/reveal.js/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+        <!-- Style Overrides -->
+        <link rel="stylesheet" href="style.css">
+
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h3>The Complementarity of</h3>
+					<h2>React.js and Web Components</h2>
+					<p>
+						<small>React.js Conf 2015 | <a target="_blank" href="http://www.twitter.com/andrewrota">@AndrewRota</a></small>
+					</p>
+				</section>
+
+				
+				<section>
+					<pre class="big-code"><code data-trim class="javascript">var HelloMessage = React.createClass({
+  render: function() {
+    return &lt;div&gt;Hello {this.props.name}&lt;/div&gt;;
+  }
+});
+React.render(&lt;HelloMessage name=&quot;John&quot; /&gt;, mountNode);</code></pre>
+				</section>
+                <section>
+					<pre><code data-trim class="javascript">
+var converter = new Showdown.converter();
+
+var MarkdownEditor = React.createClass({
+  getInitialState: function() {
+    return {value: 'Type some *markdown* here!'};
+  },
+  handleChange: function() {
+    this.setState({value: this.refs.textarea.getDOMNode().value});
+  },
+  render: function() {
+    return (
+      &lt;div className=&quot;MarkdownEditor&quot;&gt;
+        &lt;h3&gt;Input&lt;/h3&gt;
+        &lt;textarea
+          onChange={this.handleChange}
+          ref=&quot;textarea&quot;
+          defaultValue={this.state.value} /&gt;
+        &lt;h3&gt;Output&lt;/h3&gt;
+        &lt;div
+          className=&quot;content&quot;
+          dangerouslySetInnerHTML={{
+            __html: converter.makeHtml(this.state.value)
+          }}
+        /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+React.render(&lt;MarkdownEditor /&gt;, mountNode);
+</code></pre>
+				</section>
+
+                <section>
+					<h2>Pretty Code</h2>
+					<pre class="medium-code"><code data-trim class="javascript">
+  render: function() {
+    var results = this.props.results;
+    return (
+      &lt;ol&gt;
+        {results.map(function(result) {
+          return &lt;li key={result.id}&gt;
+            {result.text}
+          &lt;/li&gt;;
+        })}
+      &lt;/ol&gt;
+    );
+  }</code></pre>
+				</section>
+
+
+				<section>
+					<h1>THE END</h1>
+					<h3>@andrewrota</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="../node_modules/reveal.js/lib/js/head.min.js"></script>
+		<script src="../node_modules/reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: 'night', // available themes are in /css/theme
+				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../node_modules/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../node_modules/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../node_modules/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../node_modules/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../node_modules/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
