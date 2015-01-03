@@ -2,6 +2,10 @@ pre code {
   background: transparent !important;
 }
 
+.reveal pre {
+ box-shadow: none !important;   
+}
+
 .big-code {
   font-size: 105% !important;
   line-height: 1.25 !important;
