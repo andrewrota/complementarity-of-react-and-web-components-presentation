@@ -1,17 +1,42 @@
 pre code {
-  background: transparent !important;
+    background: transparent !important;
+}
+.reveal pre {
+    box-shadow: none !important;
+}
+.reveal blockquote {
+    text-align: left !important;
+    border: none !important;
+    background: transparent !important;
+    font-style: normal !important;
+}
+.reveal blockquote footer {
+    text-align: right !important;
+}
+.reveal .big-quote {
+    font-size: 150%;
+    width: 100%;
+}
+.reveal section img {
+    margin: 0 !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    vertical-align: bottom;
 }
 
-.reveal pre {
- box-shadow: none !important;   
+.reveal section img.border {
+    margin: 15px 0px !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 4px solid #eeeeee !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
 }
 
 .big-code {
-  font-size: 105% !important;
-  line-height: 1.25 !important;
+    font-size: 105% !important;
+    line-height: 1.25 !important;
 }
-
 .medium-code {
-     font-size: 90% !important;
+    font-size: 90% !important;
     line-height: 1.1 !important;
 }
