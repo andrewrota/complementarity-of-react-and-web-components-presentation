@@ -46,7 +46,8 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
+
+                <section>
 					<h3>The Complementarity of</h3>
 					<h2>React.js and Web Components</h2>
 					<p>
@@ -57,16 +58,70 @@
                 <section>
                     <h1>Who am I?</h1>
 				</section>
-                
+
                 <section>
                     <h1>I ❤ <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
                 </section>
+
+                <section>
+                    <h2>Web Components</h2>
+                    <blockquote style="float: left; width: 70%; margin-right: 2%;">
+                        Web Components usher in a <strong>new era</strong> of web development based on <strong>encapsulated and interoperable</strong> custom elements that extend HTML itself. <span class="attr"><a href="https://www.polymer-project.org/" target="_blank">- Polymer Project</a></span>
+                    </blockquote>
+                    <img style="float: left; width: 20%; height: 50%;" src="webcomponents.svg" />
+                </section>
+
+
+                <section>
+                    <ul>
+                            <li class="fragment grow" data-fragment-index="2"><h3>Custom Elements</h3></li>
+                            <li class="fragment grow" data-fragment-index="2"><h3>Shadow DOM</h3></li>
+                        <div class="fragment semi-fade-out" data-fragment-index="2">
+                            <li><h3>HTML Imports</h3></li>
+                            <li><h3>HTML Templates</h3></li>
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Custom Elements</h3><br>
+                    <pre class="big-code"><code data-trim class="html">&lt;my-element&gt;Hello World.&lt;/my-element&gt;</code></pre>
+                    <br>
+                    <pre class="big-code"><code data-trim class="javascript">var MyElement = document.registerElement('my-element', {
+    prototype: Object.create(HTMLElement.prototype)
+});</code></pre>
+                </section>
                 
+                <section>
+                    <h3>Shadow DOM</h3>
+                    <pre class="big-code"><code data-trim class="html">&lt;div id="my-element"&gt;&lt;/div&gt;
+&lt;p&gt;Light DOM.&lt;/p&gt;</code></pre>
+                    <br>
+                    <pre class="big-code"><code data-trim class="javascript">// Create Shadow Root
+var s = document.getElementById('my-element').createShadowRoot();
+// Add Styles and Text
+s.innerHTML += '&lt;style&gtp { color: red; }&lt;/style&gt';
+s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
+                    <br><br>
+                <div style="height: 100px;">
+                     <div style="margin: 0 auto; border: 1px solid red; max-width: 50%; padding: 10px;">
+                        <div id="my-first-element"></div>
+                        <p>Light DOM.</p>
+                    </div>
+                </div>
+                    <br>
+                    <script>(function(){var s = document.getElementById('my-first-element').createShadowRoot();s.innerHTML += '<style>p { color: red;}</style>';s.innerHTML += '<p>Shadow DOM.</p>';}());</script>
+
+                </section>
+                
+                <section>
+                    <h1>API</h1>
+                </section>
+
                 <section>
                     <h1>I ❤ <img style="height: 0.9em;" src="react.svg" alt=""></h1>
                 </section>
-                
-                
+
                 <section>
                     <blockquote class="big-quote">
                         <p>&ldquo;I definitely think it's the wrong programming paradigm; I really hope that [web components] do not succeed.&rdquo;</p>
@@ -75,7 +130,7 @@
                         </footer>
                     </blockquote>
                 </section>
-                
+
                 <section>
                     <h1><img style="height: 0.9em;" src="react.svg" alt=""> <img style="height: 0.9em;" src="Broken_heart.svg" alt=""> <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
                 </section>
