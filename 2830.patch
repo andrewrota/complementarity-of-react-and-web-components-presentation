@@ -1,0 +1,230 @@
+diff --git a/vendor/fbtransform/transforms/__tests__/react-test.js b/vendor/fbtransform/transforms/__tests__/react-test.js
+index 1b76be8..7f44050 100644
+--- a/vendor/fbtransform/transforms/__tests__/react-test.js
++++ b/vendor/fbtransform/transforms/__tests__/react-test.js
+@@ -19,11 +19,6 @@ describe('react jsx', function() {
+   var transformAll = require('../../syntax.js').transformAll;
+   var xjs = require('../xjs.js');
+ 
+-  // Add <font-face> to list of known tags to ensure that when we test support
+-  // for hyphentated known tags, it's there.
+-  // TODO: remove this when/if <font-face> is supported out of the box.
+-  xjs.knownTags['font-face'] = true;
+-
+   var transform = function(code, options, excludes) {
+     return transformAll(
+       code,
+@@ -272,13 +267,8 @@ describe('react jsx', function() {
+ 
+   it('should handle hasOwnProperty correctly', function() {
+     var code = '<hasOwnProperty>testing</hasOwnProperty>;';
+-    // var result = 'React.createElement("hasOwnProperty", null, "testing");';
+-
+-    // expect(transform(code).code).toBe(result);
+-
+-    // This is currently not supported, and will generate a string tag in
+-    // a follow up.
+-    expect(() => transform(code)).toThrow();
++    var result = 'React.createElement("hasOwnProperty", null, "testing");';
++    expect(transform(code).code).toBe(result);
+   });
+ 
+   it('should allow constructor as prop', function() {
+@@ -346,10 +336,9 @@ describe('react jsx', function() {
+     ).not.toBeCalled();
+   });
+ 
+-  it('should throw for unknown hyphenated tags', function() {
++  it('should not throw for unknown hyphenated tags', function() {
+     var code = '<x-component />;';
+-
+-    expect(() => transform(code)).toThrow();
++    transform(code); // Asserting it doesn't throw
+   });
+ 
+   it('calls assign with a new target object for spreads', function() {
+diff --git a/vendor/fbtransform/transforms/react.js b/vendor/fbtransform/transforms/react.js
+index c1df3b9..f46f7d2 100644
+--- a/vendor/fbtransform/transforms/react.js
++++ b/vendor/fbtransform/transforms/react.js
+@@ -12,7 +12,6 @@
+ var Syntax = require('jstransform').Syntax;
+ var utils = require('jstransform/src/utils');
+ 
+-var FALLBACK_TAGS = require('./xjs').knownTags;
+ var renderXJSExpressionContainer =
+   require('./xjs').renderXJSExpressionContainer;
+ var renderXJSLiteral = require('./xjs').renderXJSLiteral;
+@@ -58,17 +57,8 @@ function visitReactTag(traverse, object, path, state) {
+   // We assume that the React runtime is already in scope
+   utils.append('React.createElement(', state);
+ 
+-  // Identifiers with lower case or hypthens are fallback tags (strings).
+   // XJSMemberExpressions are not.
+   if (nameObject.type === Syntax.XJSIdentifier && isTagName(nameObject.name)) {
+-    // This is a temporary error message to assist upgrades
+-    if (!FALLBACK_TAGS.hasOwnProperty(nameObject.name)) {
+-      throw new Error(
+-        'Lower case component names (' + nameObject.name + ') are no longer ' +
+-        'supported in JSX: See http://fb.me/react-jsx-lower-case'
+-      );
+-    }
+-
+     utils.append('"' + nameObject.name + '"', state);
+     utils.move(nameObject.range[1], state);
+   } else {
+diff --git a/vendor/fbtransform/transforms/xjs.js b/vendor/fbtransform/transforms/xjs.js
+index 6f3f14c..193296d 100644
+--- a/vendor/fbtransform/transforms/xjs.js
++++ b/vendor/fbtransform/transforms/xjs.js
+@@ -11,142 +11,6 @@
+ var Syntax = require('jstransform').Syntax;
+ var utils = require('jstransform/src/utils');
+ 
+-var knownTags = {
+-  a: true,
+-  abbr: true,
+-  address: true,
+-  applet: true,
+-  area: true,
+-  article: true,
+-  aside: true,
+-  audio: true,
+-  b: true,
+-  base: true,
+-  bdi: true,
+-  bdo: true,
+-  big: true,
+-  blockquote: true,
+-  body: true,
+-  br: true,
+-  button: true,
+-  canvas: true,
+-  caption: true,
+-  circle: true,
+-  cite: true,
+-  code: true,
+-  col: true,
+-  colgroup: true,
+-  command: true,
+-  data: true,
+-  datalist: true,
+-  dd: true,
+-  defs: true,
+-  del: true,
+-  details: true,
+-  dfn: true,
+-  dialog: true,
+-  div: true,
+-  dl: true,
+-  dt: true,
+-  ellipse: true,
+-  em: true,
+-  embed: true,
+-  fieldset: true,
+-  figcaption: true,
+-  figure: true,
+-  footer: true,
+-  form: true,
+-  g: true,
+-  h1: true,
+-  h2: true,
+-  h3: true,
+-  h4: true,
+-  h5: true,
+-  h6: true,
+-  head: true,
+-  header: true,
+-  hgroup: true,
+-  hr: true,
+-  html: true,
+-  i: true,
+-  iframe: true,
+-  img: true,
+-  input: true,
+-  ins: true,
+-  kbd: true,
+-  keygen: true,
+-  label: true,
+-  legend: true,
+-  li: true,
+-  line: true,
+-  linearGradient: true,
+-  link: true,
+-  main: true,
+-  map: true,
+-  mark: true,
+-  marquee: true,
+-  mask: false,
+-  menu: true,
+-  menuitem: true,
+-  meta: true,
+-  meter: true,
+-  nav: true,
+-  noscript: true,
+-  object: true,
+-  ol: true,
+-  optgroup: true,
+-  option: true,
+-  output: true,
+-  p: true,
+-  param: true,
+-  path: true,
+-  pattern: false,
+-  picture: true,
+-  polygon: true,
+-  polyline: true,
+-  pre: true,
+-  progress: true,
+-  q: true,
+-  radialGradient: true,
+-  rect: true,
+-  rp: true,
+-  rt: true,
+-  ruby: true,
+-  s: true,
+-  samp: true,
+-  script: true,
+-  section: true,
+-  select: true,
+-  small: true,
+-  source: true,
+-  span: true,
+-  stop: true,
+-  strong: true,
+-  style: true,
+-  sub: true,
+-  summary: true,
+-  sup: true,
+-  svg: true,
+-  table: true,
+-  tbody: true,
+-  td: true,
+-  text: true,
+-  textarea: true,
+-  tfoot: true,
+-  th: true,
+-  thead: true,
+-  time: true,
+-  title: true,
+-  tr: true,
+-  track: true,
+-  tspan: true,
+-  u: true,
+-  ul: true,
+-  'var': true,
+-  video: true,
+-  wbr: true
+-};
+-
+ function renderXJSLiteral(object, isLast, state, start, end) {
+   var lines = object.value.split(/\r\n|\n|\r/);
+ 
+@@ -241,7 +105,6 @@ function trimLeft(value) {
+   return value.replace(/^[ ]+/, '');
+ }
+ 
+-exports.knownTags = knownTags;
+ exports.renderXJSExpressionContainer = renderXJSExpressionContainer;
+ exports.renderXJSLiteral = renderXJSLiteral;
+ exports.quoteAttrName = quoteAttrName;

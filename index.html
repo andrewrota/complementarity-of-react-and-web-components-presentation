@@ -115,8 +115,10 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                 </section>
                 
                 <section>
-                    <h1>API</h1>
+                    <h3>Web Components are portable, because their API is the web platform itself.</h3>
                 </section>
+                
+                
 
                 <section>
                     <h1>I ❤ <img style="height: 0.9em;" src="react.svg" alt=""></h1>
@@ -134,18 +136,15 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                 <section>
                     <h1><img style="height: 0.9em;" src="react.svg" alt=""> <img style="height: 0.9em;" src="Broken_heart.svg" alt=""> <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
                 </section>
-                
-                
                 <section>
                 <pre class="big-code"><code data-trim class="javascript">React.render(
     &lt;paper-button&gt;Web Components!!&lt;/paper-button&gt;,
     document.getElementById(&#39;root&#39;)
 );</code></pre>
                 </section>
-                
                 <section>
                     <pre class="big-code error">ERROR in ./src/js/init.js<br>
-Module build failed:Error: Lower case component names (paper-button) are no longer supported in JSX: See http://fb.me/react-jsx-lower-case</pre>
+Module build failed:Error: Lower case component<br>names (paper-button) are no longer supported in<br>JSX: See http://fb.me/react-jsx-lower-case</pre>
                 </section>
                 <section>
                     <blockquote>
@@ -167,14 +166,36 @@ Module build failed:Error: Lower case component names (paper-button) are no long
                     </blockquote>
                 </section>
                 <section>
-                <pre class="big-code"><code data-trim class="javascript">React.render(
+                    <blockquote class="big-quote">
+                        <p>&ldquo;<span style="text-transform: capitalize;">The</span> Web is continuously evolving.&rdquo;</p>
+                        <footer>
+                            — <cite><a href="https://wiki.whatwg.org/wiki/FAQ#Does_that_mean_the_specifications_can_change_at_any_time.3F">WHATWG</a></cite>
+                        </footer>
+                    </blockquote>
+                </section>
+                <section>
+                    <pre class="big-code"><code data-trim class="javascript">React.render(
   React.createElement('paper-button', null, 'Web Components!!'),
   document.getElementById('root')
 );</code></pre>
                 </section>
-                
-                
-
+                <section>
+                    <h3>Goodbye, Whitelist</h3>
+                    <img src="removewhitelist.png" alt="">
+                    <span style="clear: both; float: right; font-size: 60%;">— <a href="https://github.com/facebook/react/pull/2830/files">Removed unknown tag warning/whitelist. #2830</a></span>
+                </section>
+                <section>
+                    <h3>Goodbye, Warning</h3>
+                    <img src="removewarning.png" alt="">
+                    <span style="clear: both; float: right; font-size: 60%;">— <a href="https://github.com/facebook/react/pull/2830/files">Removed unknown tag warning/whitelist. #2830</a></span>
+                </section>
+                <section>
+                    <h3>Hello, Custom Elements!</h3>
+                <pre class="big-code"><code data-trim class="javascript">React.render(
+    &lt;paper-button&gt;Web Components!!&lt;/paper-button&gt;,
+    document.getElementById(&#39;root&#39;)
+);</code></pre>
+                </section>
 				<section>
 					<pre class="big-code"><code data-trim class="javascript">var HelloMessage = React.createClass({
   render: function() {
@@ -237,7 +258,7 @@ React.render(&lt;MarkdownEditor /&gt;, mountNode);
 
 
 				<section>
-					<h1>THE END</h1>
+					<h1>Thanks!</h1>
 					<h3>@andrewrota</h3>
 				</section>
 

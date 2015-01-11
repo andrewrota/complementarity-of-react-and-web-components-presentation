@@ -1,3 +1,10 @@
+.reveal .slides h3,
+.reveal .slides h4,
+.reveal .slides h5,
+.reveal .slides h6 {
+    line-height: 1.2;
+}
+
 pre code {
     background: transparent !important;
 }
@@ -16,7 +23,9 @@ pre code {
 }
 .reveal blockquote footer {
     text-align: right !important;
+    font-size: 60%;
 }
+
 .reveal .big-quote {
     font-size: 150%;
     width: 100%;
