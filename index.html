@@ -73,14 +73,14 @@
 
 
                 <section>
-                    <ul>
-                            <li class="fragment grow" data-fragment-index="2"><h3>Custom Elements</h3></li>
-                            <li class="fragment grow" data-fragment-index="2"><h3>Shadow DOM</h3></li>
+                    <div style="text-align: center;">
+                            <h3 class="fragment grow" data-fragment-index="2">Custom Elements</h3>
+                            <h3 class="fragment grow" data-fragment-index="2">Shadow DOM</h3>
                         <div class="fragment semi-fade-out" data-fragment-index="2">
-                            <li><h3>HTML Imports</h3></li>
-                            <li><h3>HTML Templates</h3></li>
+                            <h3>HTML Imports</h3>
+                            <h3>HTML Templates</h3>
                         </div>
-                    </ul>
+                    </div>
                 </section>
 
                 <section>
@@ -134,8 +134,46 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                 <section>
                     <h1><img style="height: 0.9em;" src="react.svg" alt=""> <img style="height: 0.9em;" src="Broken_heart.svg" alt=""> <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
                 </section>
-
-
+                
+                
+                <section>
+                <pre class="big-code"><code data-trim class="javascript">React.render(
+    &lt;paper-button&gt;Web Components!!&lt;/paper-button&gt;,
+    document.getElementById(&#39;root&#39;)
+);</code></pre>
+                </section>
+                
+                <section>
+                    <pre class="big-code error">ERROR in ./src/js/init.js<br>
+Module build failed:Error: Lower case component names (paper-button) are no longer supported in JSX: See http://fb.me/react-jsx-lower-case</pre>
+                </section>
+                <section>
+                    <blockquote>
+                        <p>&ldquo;The React element produced by JSX can be either a React class that exists in the local scope or a global scope HTML/SVG element depending on a convention.&rdquo;</p>
+                        <footer>
+                            — <cite><a href="https://gist.github.com/sebmarkbage/f1f4ba40816e7d7848ad">Sebastian Markbåge</a></cite>
+                        </footer>
+                    </blockquote>
+                </section>
+                <section>
+                    <h3>&ldquo;The Whitelist Problem&rdquo;</h3>
+                    <blockquote>
+                        <p>&ldquo;<span style="text-transform: capitalize;">every</span> time there's a new HTML/SVG tag, you can't use it until we add it to the whitelist. You can't add it to the whitelist until you update your existing codebase. For example, we recently added the picture tag. Without a codemod something like this would've broken:</p>
+                        <pre><code>var picture = React.createClass(); return &lt;picture &#47;&gt;;</code></pre>
+                        <p style="text-align: right;">&rdquo;</p>
+                        <footer>
+                            — <cite><a href="https://gist.github.com/sebmarkbage/f1f4ba40816e7d7848ad">Sebastian Markbåge</a></cite>
+                        </footer>
+                    </blockquote>
+                </section>
+                <section>
+                <pre class="big-code"><code data-trim class="javascript">React.render(
+  React.createElement('paper-button', null, 'Web Components!!'),
+  document.getElementById('root')
+);</code></pre>
+                </section>
+                
+                
 
 				<section>
 					<pre class="big-code"><code data-trim class="javascript">var HelloMessage = React.createClass({

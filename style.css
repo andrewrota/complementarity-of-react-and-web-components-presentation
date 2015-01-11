@@ -4,6 +4,10 @@ pre code {
 .reveal pre {
     box-shadow: none !important;
 }
+
+.reveal pre.error {
+     color: red !important;
+}
 .reveal blockquote {
     text-align: left !important;
     border: none !important;
