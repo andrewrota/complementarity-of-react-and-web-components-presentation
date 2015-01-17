@@ -12,6 +12,11 @@ pre code {
     box-shadow: none !important;
 }
 
+.reveal pre.inline {
+   width: initial !important;
+   text-align: inherit !important;
+}
+
 .reveal pre.error {
      color: red !important;
 }
@@ -52,4 +57,15 @@ pre code {
 .medium-code {
     font-size: 90% !important;
     line-height: 1.1 !important;
+}
+pre.element-list {
+    float: left;
+    width: 20%;
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+pre.element-list.highlighted {
+    background:  rgba(255, 153, 0, 0.15)
 }
