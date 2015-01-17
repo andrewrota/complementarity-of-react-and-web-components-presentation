@@ -59,6 +59,7 @@ pre code {
     line-height: 1.1 !important;
 }
 pre.element-list {
+    font-size: 40%;
     float: left;
     width: 20%;
     display: block;
@@ -68,4 +69,18 @@ pre.element-list {
 }
 pre.element-list.highlighted {
     background:  rgba(255, 153, 0, 0.15)
+}
+pre.element-list.fragment.grow.visible {
+  -webkit-transform: scale(2) !important;
+  -moz-transform: scale(2) !important;
+  -ms-transform: scale(2) !important;
+  -o-transform: scale(2) !important;
+  transform: scale(2) !important;
+}
+.element-list .fragment.shrink.visible {
+  -webkit-transform: scale(0.5) !important;
+  -moz-transform: scale(0.5) !important;
+  -ms-transform: scale(0.5) !important;
+  -o-transform: scale(0.5) !important;
+  transform: scale(0.5) !important;
 }
