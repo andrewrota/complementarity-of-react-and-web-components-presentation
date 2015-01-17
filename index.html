@@ -236,12 +236,6 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                     </blockquote>
                 </section>
                 <section>
-                    <pre class="big-code"><code data-trim class="javascript">React.render(
-  React.createElement('paper-button', null, 'Web Components!!'),
-  document.getElementById('root')
-);</code></pre>
-                </section>
-                <section>
                     <h3>Goodbye, Whitelist</h3>
                     <img src="removewhitelist.png" alt="">
                     <span style="clear: both; float: right; font-size: 60%;">— <a href="https://github.com/facebook/react/pull/2830/files">Removed unknown tag warning/whitelist. #2830</a></span>
@@ -256,6 +250,13 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                 <pre class="big-code"><code data-trim class="javascript">React.render(
     &lt;paper-button&gt;Web Components!!&lt;/paper-button&gt;,
     document.getElementById(&#39;root&#39;)
+);</code></pre>
+                </section>
+                <section>
+                    <h3>Hello, Custom Elements!</h3>
+                    <pre class="big-code"><code data-trim class="javascript">React.render(
+  React.createElement('paper-button', null, 'Web Components!!'),
+  document.getElementById('root')
 );</code></pre>
                 </section>
                 <section>
@@ -317,65 +318,23 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                 <section>
                     <h3>Not cool.</h3>
                 </section>
-				<section>
-					<pre class="big-code"><code data-trim class="javascript">var HelloMessage = React.createClass({
-  render: function() {
-    return &lt;div&gt;Hello {this.props.name}&lt;/div&gt;;
-  }
-});
-React.render(&lt;HelloMessage name=&quot;John&quot; /&gt;, mountNode);</code></pre>
-				</section>
                 <section>
-					<pre><code data-trim class="javascript">
-var converter = new Showdown.converter();
-
-var MarkdownEditor = React.createClass({
-  getInitialState: function() {
-    return {value: 'Type some *markdown* here!'};
-  },
-  handleChange: function() {
-    this.setState({value: this.refs.textarea.getDOMNode().value});
-  },
-  render: function() {
-    return (
-      &lt;div className=&quot;MarkdownEditor&quot;&gt;
-        &lt;h3&gt;Input&lt;/h3&gt;
-        &lt;textarea
-          onChange={this.handleChange}
-          ref=&quot;textarea&quot;
-          defaultValue={this.state.value} /&gt;
-        &lt;h3&gt;Output&lt;/h3&gt;
-        &lt;div
-          className=&quot;content&quot;
-          dangerouslySetInnerHTML={{
-            __html: converter.makeHtml(this.state.value)
-          }}
-        /&gt;
-      &lt;/div&gt;
-    );
-  }
-});
-
-React.render(&lt;MarkdownEditor /&gt;, mountNode);
-</code></pre>
-				</section>
-
+                    <h3>Best Practices for Building<br>Web Components for <strike>&nbsp; &nbsp;React.js&nbsp; &nbsp;</strike> Anything</h3>
+                </section>
                 <section>
-					<h2>Pretty Code</h2>
-					<pre class="medium-code"><code data-trim class="javascript">
-  render: function() {
-    var results = this.props.results;
-    return (
-      &lt;ol&gt;
-        {results.map(function(result) {
-          return &lt;li key={result.id}&gt;
-            {result.text}
-          &lt;/li&gt;;
-        })}
-      &lt;/ol&gt;
-    );
-  }</code></pre>
-				</section>
+                    <h2>Web Components Should Be&hellip;</h2><br><br>
+                    <div style="text-align: left;">
+                            <h3>- Small</h3>
+                            <h3>- Extremely Encapsulated</h3>
+                            <h3>- As Stateless as Possible</h3>
+                            <h3>- Performant</h3>
+                    </div>
+                </section>
+				
+                <section>
+                    <h1><img style="height: 0.9em;" src="react.svg" alt=""> <img style="height: 0.9em;" src="like.svg" alt=""> <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
+                    <!-- Source: http://commons.wikimedia.org/wiki/File:Bot%C3%B3n_Me_gusta.svg -->
+                </section>
 
 
 				<section>
@@ -401,7 +360,7 @@ React.render(&lt;MarkdownEditor /&gt;, mountNode);
 				center: true,
 
 				theme: 'night', // available themes are in /css/theme
-				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+				transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
