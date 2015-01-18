@@ -221,7 +221,7 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                     <h3>v0.12-rc1</h3>
                     <blockquote>
                         <p>&ldquo;To address this, we decided on a convention: <strong>All JSX tags that start with a lower-case letter or contain a dash are treated as HTML.</strong></p>
-                        <p>This means that you no longer have to wait for us to upgrade JSX to use new tags. This also introduces the possibility to consume custom elements (Web Components) - although custom attributes are not yet fully supported.&rdquo;</p>
+                        <p>&hellip;This also introduces the possibility to <strong>consume custom elements (Web Components)</strong>&rdquo;</p>
                         <footer>
                             — <cite><a href="http://facebook.github.io/react/blog/2014/10/16/react-v0.12-rc1.html">Sebastian Markbåge</a> (Oct. 16, 2014)</cite>
                         </footer>
@@ -329,7 +329,8 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                     </div>
                 </section>
 				<section>
-                    <h3>tldr; Web Components should behave no differently than native DOM elements.</h3>
+                    <h3>tldr; Web Components should seem no different than native DOM elements.</h3>
+                    <h3 class="fragment">corollary: Use Web Components in React.js as if they were native DOM elements.</h3>
                 </section>
                 <section>
                     <h1><img style="height: 0.9em;" src="react.svg" alt=""> <img style="height: 0.9em;" src="like.svg" alt=""> <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
