@@ -84,3 +84,41 @@ pre.element-list.fragment.grow.visible {
   -o-transform: scale(0.5) !important;
   transform: scale(0.5) !important;
 }
+
+div.component-block {
+    height: 100px;
+    width: 100%;
+    position: relative;
+    border: 1px solid white;
+    display: block;
+}
+
+
+div.component-block-wrapper {
+    box-sizing: border-box;
+    padding: 5px;
+    display: inline-block;
+}
+
+div.component-block-wrapper.width-15 {
+    width: 16.5%;
+}
+
+div.component-block-wrapper.width-33 {
+    width: 33%;
+}
+
+div.component-block h4 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.component-block h4:before {
+     content: "<";
+}
+div.component-block h4:after {
+     content: "/>";
+}
