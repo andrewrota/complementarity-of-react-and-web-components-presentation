@@ -56,10 +56,6 @@
 				</section>
 
                 <section>
-                    <h1>Who am I?</h1>
-				</section>
-
-                <section>
                     <h1>I ❤ <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
                 </section>
 
@@ -70,7 +66,6 @@
                     </blockquote>
                     <img style="float: left; width: 20%; height: 50%;" src="webcomponents.svg" />
                 </section>
-
 
                 <section>
                     <div style="text-align: center;">
@@ -112,6 +107,24 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                     <br>
                     <script>(function(){var s = document.getElementById('my-first-element').createShadowRoot();s.innerHTML += '<style>p { color: red;}</style>';s.innerHTML += '<p>Shadow DOM.</p>';}());</script>
 
+                </section>
+                
+                
+                <section>
+                    <pre class="medium-code"><code class="html">&lt;my-custom-element customAttribute=&quot;foo&quot;&gt;&lt;/my-custom-element&gt;</code></pre>
+                </section>
+                
+                <section>
+                    <pre class="medium-code"><code class="html">&lt;my-custom-element customAttribute=&quot;foo&quot;&gt;
+  &lt;!-- SHADOW DOM --&gt;
+  &lt;style&gt;p { color: red; }&lt;/style&gt;
+  &lt;div&gt;
+    &lt;button name=&quot;button&quot;&gt;&lt;content&gt;&lt;/content&gt;&lt;/button&gt;
+    &lt;p&gt;Lorem Ipsum&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;script&gt;doSomething();&lt;/script&gt;
+  &lt;!-- /SHADOW DOM --&gt;
+&lt;/my-custom-element&gt;</code></pre>
                 </section>
                 
                 <section>
@@ -208,6 +221,64 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                             <h5>One-Way Data Flow</h5>
                             <h5>Ultra-High Performance</h5>
                             <h5>Client + Server Rendering</h5>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2 style="width: 100%; border: 1px solid white; height: 100px; line-height: 100px;">&lt;React/&gt;</h2>
+                    <div class="first width-33 component-block-wrapper">
+                        <div class="width-33 component-block">
+                            <h4>React</h4>
+                        </div>
+                    </div>
+                    <div class="width-33 component-block-wrapper">
+                        <div class="width-33 component-block">
+                            <h4>React</h4>
+                        </div>
+                    </div><div class="last width-33 component-block-wrapper">
+                        <div class="width-33 component-block">
+                            <h4>React</h4>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="first component-group">
+                        <div class="first width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>DOM</h4>
+                            </div>
+                        </div>
+                        <div class="width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>DOM</h4>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="component-group">
+                        <div class="first width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>DOM</h4>
+                            </div>
+                        </div>
+                        <div class="width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>WC</h4>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="last component-group">
+                        <div class="first width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>WC</h4>
+                            </div>
+                        </div>
+                        <div class="width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>DOM</h4>
+                            </div>
+                        </div>
+                    
                     </div>
                 </section>
                 
@@ -339,15 +410,6 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                 </section>
                 
                 
-                <section>
-                    <h2>Web Components Should Be&hellip;</h2><br>
-                    <div style="text-align: left;">
-                            <h3>- Small</h3>
-                            <h3>- Extremely Encapsulated</h3>
-                            <h3>- As Stateless as Possible</h3>
-                            <h3>- Performant</h3>
-                    </div>
-                </section>
                 
                 <section>
                     <h2>Web Components Should Be&hellip;</h2><br>
@@ -357,6 +419,20 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                             <h3 style="opacity: .5;">- As Stateless as Possible</h3>
                             <h3 style="opacity: .5;">- Performant</h3>
                     </div>
+                </section>
+                
+                
+                
+                <section>
+                    <h2>Bad Idea</h2>
+                    <pre class="big-code"><code class="markdown">&lt;my-application&gt;&lt;/my-application&gt;</code></pre>
+                </section>
+                
+                
+                
+                <section>
+                    <h2>Good Idea</h2>
+                    <pre class="big-code"><code class="markdown">&lt;my-button&gt;&lt;/my-button&gt;</code></pre>
                 </section>
                 
                 <section>
@@ -401,7 +477,7 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                 </section>
                 <section>
                     <div style="text-align: center;">
-                        <pre class="big-code inline"><code data-trim class="html">&lt;google-map&gt;&lt;/google-map&gt;</code></pre>
+                        <pre class="big-code inline"><code data-trim class="markdown">&lt;google-map&gt;&lt;/google-map&gt;</code></pre>
                     </div>
                 </section>
                 <section>
@@ -427,7 +503,7 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                         <p>&ldquo;Try to keep as many of your components as possible stateless.&rdquo;</p>
                         <footer>
                              — <span class="attr"><a href="https://github.com/facebook/react/blob/3144485cb9fb12404d702c05e38af63dd4e56d15/docs/docs/03-interactivity-and-dynamic-uis.md" target="_blank">React.js Documentation</a></span><br>
-                             <span class="fragment fade-in">— <span class="attr">Great advice for Web Components</a></span></span>
+                             <span class="fragment fade-in">— <span class="attr">Great advice for Web Components</span></span>
                         </footer>
                     </blockquote>
                 </section>
@@ -438,6 +514,20 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                             <h3 style="opacity: .5;">- Small</h3>
                             <h3 style="opacity: .5;">- Extremely Encapsulated</h3>
                             <h3 style="opacity: .5;">- As Stateless as Possible</h3>
+                            <h3>- Performant</h3>
+                    </div>
+                </section>
+            
+                <section>
+                    <h3>Your application is only as fast as your slowest component.</h3>
+                </section>
+            
+            <section>
+                    <h2>Web Components Should Be&hellip;</h2><br>
+                    <div style="text-align: left;">
+                            <h3>- Small</h3>
+                            <h3>- Extremely Encapsulated</h3>
+                            <h3>- As Stateless as Possible</h3>
                             <h3>- Performant</h3>
                     </div>
                 </section>
