@@ -138,6 +138,7 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                             <h3><pre class="inline"><code class="markup">&lt;video src="video.ogg" autoplay controls&gt;&lt;/video&gt;</code></pre></h3>
                             <h3 class="fragment" data-fragment-index="2"><pre class="inline"><code class="markup">&lt;x-calendar view=&quot;2015-01-29&quot;&gt;&lt;/x-calendar&gt;</code></pre></h3>
                             <h3 class="fragment" data-fragment-index="2"><pre class="inline"><code class="markup">&lt;chart-pie values=&quot;[10, 20, 5, 50]&quot;&gt;&lt;/chart-pie&gt;</code></pre></h3>
+                        <h3 class="fragment" data-fragment-index="2"><pre class="inline"><code class="markup">&lt;my-custom-element customAttribute=&quot;foo&quot;&gt;&lt;/my-custom-element&gt;</code></pre></h3>
                     </div>
                 </section>
 
@@ -284,13 +285,13 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                 
                 <section>
                 <pre class="big-code"><code data-trim class="javascript">React.render(
-    &lt;paper-button&gt;Web Components!!&lt;/paper-button&gt;,
-    document.getElementById(&#39;root&#39;)
+  &lt;my-custom-element&gt;Web Components!!&lt;/my-custom-element&gt;,
+  document.getElementById(&#39;root&#39;)
 );</code></pre>
                 </section>
                 <section>
                     <pre class="big-code error">ERROR in ./src/js/init.js<br>
-Module build failed:Error: Lower case component<br>names (paper-button) are no longer supported in<br>JSX: See http://fb.me/react-jsx-lower-case</pre>
+Module build failed:Error: Lower case component<br>names (my-custom-element) are no longer supported<br>in JSX: See http://fb.me/react-jsx-lower-case</pre>
                 </section>
 <!--                 <section>
                     <blockquote>
@@ -304,7 +305,7 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                     <h3>&ldquo;The Whitelist Problem&rdquo;</h3>
                     <blockquote>
                         <p>&ldquo;<span style="text-transform: capitalize;">every</span> time there's a new HTML/SVG tag, you can't use it until we add it to the whitelist. You can't add it to the whitelist until you update your existing codebase. For example, we recently added the picture tag. Without a codemod something like this would've broken:</p>
-                        <pre><code>var picture = React.createClass(); return &lt;picture &#47;&gt;;</code></pre>
+                        <pre class="medium-code" style="margin-left: -15px;"><code>var picture = React.createClass(); return &lt;picture &#47;&gt;;</code></pre>
                         <p style="text-align: right;">&rdquo;</p>
                         <footer>
                             — <cite><a href="https://gist.github.com/sebmarkbage/f1f4ba40816e7d7848ad">Sebastian Markbåge</a> (Oct. 5, 2014)</cite>
@@ -342,14 +343,14 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                 <section>
                     <h3>Hello, Custom Elements!</h3>
                 <pre class="big-code"><code data-trim class="javascript">React.render(
-    &lt;paper-button&gt;Web Components!!&lt;/paper-button&gt;,
-    document.getElementById(&#39;root&#39;)
+  &lt;my-custom-element&gt;Web Components!!&lt;/my-custom-element&gt;,
+  document.getElementById(&#39;root&#39;)
 );</code></pre>
                 </section>
                 <section>
                     <h3>Hello, Custom Elements!</h3>
                     <pre class="big-code"><code data-trim class="javascript">React.render(
-  React.createElement('paper-button', null, 'Web Components!!'),
+  React.createElement('my-custom-element', null, 'Web Components!!'),
   document.getElementById('root')
 );</code></pre>
                 </section>
@@ -386,14 +387,6 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
 <a href="https://github.com/1000ch/lazyload-image" target="_blank">&lt;lazyload-image&gt;</a><br>
 <a href="https://github.com/stevenrskelton/sortable-table" target="_blank">&lt;sortable-table&gt;</a><br>
 <a href="https://github.com/garstasio/ajax-form" target="_blank">&lt;ajax-form&gt;</a></div></pre>
-                    <pre class="element-list fragment grow" data-fragment-index="6"><div class=""><a href="https://github.com/zenorocha/facebook-button" target="_blank">&lt;facebook-button&gt;</a><br>
-<a href="https://github.com/luiztiago/facebook-image-element" target="_blank">&lt;facebook-image-element&gt;</a><br>
-<a href="https://github.com/davidwittenbrink/facebook-login" target="_blank">&lt;facebook-login&gt;</a><br>
-<a href="https://github.com/kunalnagar/facebook-like-button" target="_blank">&lt;facebook-like-button&gt;</a><br>
-<a href="https://github.com/kunalnagar/facebook-share" target="_blank">&lt;facebook-share&gt;</a><br>
-<a href="https://github.com/kunalnagar/facebook-comments" target="_blank">&lt;facebook-comments&gt;</a><br>
-<a href="https://github.com/kunalnagar/facebook-activity-feed" target="_blank">&lt;facebook-activity-feed&gt;</a><br>
-<a href="https://github.com/kunalnagar/facebook-like-box" target="_blank">&lt;facebook-like-box&gt;</a></div></pre>
                 </section>
                 
                 <section>
