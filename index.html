@@ -139,7 +139,7 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                             <h3>Ultra-High Performance</h3>
                             <h3>Synthetic Event System</h3>
                             <h3>Cohesive, Loosely Coupled Components</h3>
-                            <h3>Isomorphic Apps</h3>
+                            <h3>Client + Server Rendering</h3>
                     </div>
                 </section>
                 
@@ -175,6 +175,29 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                         <h5>Reusability</h5>
                         <h5>Portability</h5>
                     </div>
+                    <div style="text-align: center; float: left; width: 10%;"><br><br><br><br><br><h2>or</h2></div>
+                    <div style="text-align: center; float: left; width: 40%;">
+                            <h1><img style="height: 0.9em;" src="react.svg" alt=""></h1>
+                            <hr width="80%">
+                            <h5>Virtual DOM</h5>
+                            <h5>Synthetic Event System</h5>
+                            <hr width="80%">
+                            <h5>One-Way Data Flow</h5>
+                            <h5>Ultra-High Performance</h5>
+                            <h5>Client + Server Rendering</h5>
+                    </div>
+                </section>
+                <section>
+                    <div style="text-align: center; float: left; width: 40%;">
+                        <h1><img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
+                        <hr width="80%">
+                        <h5>Custom Elements</h5>
+                        <h5>Shadow DOM</h5>
+                        <hr width="80%">
+                        <h5>Encapsulation</h5>
+                        <h5>Reusability</h5>
+                        <h5>Portability</h5>
+                    </div>
                     <div style="text-align: center; float: left; width: 10%;"><br><br><br><br><br><h1>+</h1></div>
                     <div style="text-align: center; float: left; width: 40%;">
                             <h1><img style="height: 0.9em;" src="react.svg" alt=""></h1>
@@ -184,7 +207,7 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                             <hr width="80%">
                             <h5>One-Way Data Flow</h5>
                             <h5>Ultra-High Performance</h5>
-                            <h5>Isomorphic Apps</h5>
+                            <h5>Client + Server Rendering</h5>
                     </div>
                 </section>
                 
@@ -302,6 +325,78 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
 <a href="https://github.com/kunalnagar/facebook-like-box" target="_blank">&lt;facebook-like-box&gt;</a></div></pre>
                 </section>
                 <section>
+                    <h2>Custom Events</h2>
+                    <pre class="medium-code" style="margin-left: -50px;"><code>React.createClass({
+  render: function() {
+    return (
+      &lt;paper-toast ref=&quot;myCustomElement&quot; text=&quot;Hello, World&quot; opened&gt;&lt;/paper-toast&gt;
+    );
+  },
+  componentDidMount: function() {
+     this.refs.myCustomElement.getDOMNode()
+       .addEventListener('core-overlay-close-completed', doSomething);
+  },
+  componentWillUnmount: function() {
+     this.refs.myCustomElement.getDOMNode()
+       .removeEventListener('core-overlay-close-completed', doSomething);
+  }
+});
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Best Practices for Building<br>Web Components for <strike>&nbsp; &nbsp;React.js&nbsp; &nbsp;</strike> Anything</h3>
+                </section>
+                <section>
+                    <h2>Web Components Should Be&hellip;</h2><br>
+                    <div style="text-align: left;">
+                            <h3>- Small</h3>
+                            <h3>- Extremely Encapsulated</h3>
+                            <h3>- As Stateless as Possible</h3>
+                            <h3>- Performant</h3>
+                    </div>
+                </section>
+                
+                
+                <section>
+                    <h2>Web Components Should Be&hellip;</h2><br>
+                    <div style="text-align: left;">
+                            <h3>- Small</h3>
+                            <h3>- Extremely Encapsulated</h3>
+                            <h3>- As Stateless as Possible</h3>
+                            <h3>- Performant</h3>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Web Components Should Be&hellip;</h2><br>
+                    <div style="text-align: left;">
+                            <h3>- Small</h3>
+                            <h3 style="opacity: .5;">- Extremely Encapsulated</h3>
+                            <h3 style="opacity: .5;">- As Stateless as Possible</h3>
+                            <h3 style="opacity: .5;">- Performant</h3>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Web Components Should Be&hellip;</h2><br>
+                    <div style="text-align: left;">
+                            <h3 style="opacity: .5;">- Small</h3>
+                            <h3>- Extremely Encapsulated</h3>
+                            <h3 style="opacity: .5;">- As Stateless as Possible</h3>
+                            <h3 style="opacity: .5;">- Performant</h3>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Component API</h2><br>
+                    <div style="text-align: left;">
+                            <h3>Attributes <pre class="inline-code"><code>&lt;paper-toast text=&quot;Hello, world&quot; opened&gt;</code></pre></h3>
+                            <h3>Methods <pre class="inline-code"><code>   getDOMNode().toggle()</code></pre></h3>
+                            <h3>Events <pre class="inline-code"><code>      &lt;paper-toast onClick={this.handleClick}&gt;</code></pre></h3>
+                    </div>
+                </section>
+                
+                <section>
                     <h3>Not All Web Components <span style="white-space: nowrap">Are Created Equal</span></h3>
                 </section>
                 <section>
@@ -316,26 +411,44 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                     <img src="googlemapscripts2.png" alt="">
                     <h3>Not cool.</h3>
                 </section>
+                
                 <section>
-                    <h3>Best Practices for Building<br>Web Components for <strike>&nbsp; &nbsp;React.js&nbsp; &nbsp;</strike> Anything</h3>
-                </section>
-                <section>
-                    <h2>Web Components Should Be&hellip;</h2><br><br>
+                    <h2>Web Components Should Be&hellip;</h2><br>
                     <div style="text-align: left;">
-                            <h3>- Small</h3>
-                            <h3>- Extremely Encapsulated</h3>
+                            <h3 style="opacity: .5;">- Small</h3>
+                            <h3 style="opacity: .5;">- Extremely Encapsulated</h3>
                             <h3>- As Stateless as Possible</h3>
-                            <h3>- Performant</h3>
+                            <h3 style="opacity: .5;">- Performant</h3>
                     </div>
-                </section>
-				<section>
-                    <h3>tldr; Web Components should seem no different than native DOM elements.</h3>
-                    <h3 class="fragment">corollary: Use Web Components in React.js as if they were native DOM elements.</h3>
                 </section>
                 
                 <section>
+                    <blockquote class="big-quote">
+                        <p>&ldquo;Try to keep as many of your components as possible stateless.&rdquo;</p>
+                        <footer>
+                             — <span class="attr"><a href="https://github.com/facebook/react/blob/3144485cb9fb12404d702c05e38af63dd4e56d15/docs/docs/03-interactivity-and-dynamic-uis.md" target="_blank">React.js Documentation</a></span><br>
+                             <span class="fragment fade-in">— <span class="attr">Great advice for Web Components</a></span></span>
+                        </footer>
+                    </blockquote>
+                </section>
+                
+                <section>
+                    <h2>Web Components Should Be&hellip;</h2><br>
+                    <div style="text-align: left;">
+                            <h3 style="opacity: .5;">- Small</h3>
+                            <h3 style="opacity: .5;">- Extremely Encapsulated</h3>
+                            <h3 style="opacity: .5;">- As Stateless as Possible</h3>
+                            <h3>- Performant</h3>
+                    </div>
+                </section>
+
+				<section>
+                    <h3 class="fragment semi-fade-out" data-fragment-index="2">tldr; Web Components should seem no different than native DOM elements.</h3>
+                    <h3 class="fragment" data-fragment-index="2">corollary: Use Web Components in React.js as if they were native DOM elements.</h3>
+                </section>
+                <section>
                     <h2 style="width: 100%; border: 1px solid white; height: 100px; line-height: 100px;">&lt;React/&gt;</h2>
-                    <div class="width-33 component-block-wrapper">
+                    <div class="first width-33 component-block-wrapper">
                         <div class="width-33 component-block">
                             <h4>React</h4>
                         </div>
@@ -344,49 +457,83 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                         <div class="width-33 component-block">
                             <h4>React</h4>
                         </div>
-                    </div><div class="width-33 component-block-wrapper">
+                    </div><div class="last width-33 component-block-wrapper">
                         <div class="width-33 component-block">
                             <h4>React</h4>
                         </div>
                     </div>
                     <br>
-                    <div class="width-15 component-block-wrapper">
-                        <div class="width-15 component-block">
-                            <h4>DOM</h4>
+                    <div class="first component-group">
+                        <div class="first width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>DOM</h4>
+                            </div>
                         </div>
+                        <div class="width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>DOM</h4>
+                            </div>
+                        </div>
+                    
                     </div>
-                    <div class="width-15 component-block-wrapper">
-                        <div class="width-15 component-block">
-                            <h4>DOM</h4>
+                    <div class="component-group">
+                        <div class="first width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>DOM</h4>
+                            </div>
                         </div>
-                    </div><div class="width-15 component-block-wrapper">
-                        <div class="width-15 component-block">
-                            <h4>DOM</h4>
+                        <div class="width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>WC</h4>
+                            </div>
                         </div>
-                    </div><div class="width-15 component-block-wrapper">
-                        <div class="width-15 component-block">
-                            <h4>React</h4>
+                    
+                    </div>
+                    <div class="last component-group">
+                        <div class="first width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>WC</h4>
+                            </div>
                         </div>
-                    </div><div class="width-15 component-block-wrapper">
-                        <div class="width-15 component-block">
-                            <h4>WC</h4>
+                        <div class="width-15 component-block-wrapper">
+                            <div class="width-15 component-block">
+                                <h4>DOM</h4>
+                            </div>
                         </div>
-                    </div><div class="width-15 component-block-wrapper">
-                        <div class="width-15 component-block">
-                            <h4>React</h4>
-                        </div>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                
+                <section>
+                    <h2>React within Web Components?</h2><br><br>
+                    <div style="text-align: left;">
+                            <h3></h3>
+                            <h3></h3>
+                            <h3></h3>
+                            <h3></h3>
                     </div>
                 </section>
                 <section>
-                    <h1><img style="height: 0.9em;" src="react.svg" alt=""> <img style="height: 0.9em;" src="like.svg" alt=""> <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
-                    <!-- Source: http://commons.wikimedia.org/wiki/File:Bot%C3%B3n_Me_gusta.svg -->
+                    <h2>The Future (?)</h2><br>
+                    <div style="text-align: left;">
+                            <h3>Custom Attribute Support <span style="opacity: .5;">(<a href="https://github.com/facebook/react/issues/2746" target="_blank">Issue #2746</a>)</span></h3>
+                            <h3>Custom Event Support</h3>
+                    </div>
                 </section>
-
-
-				<section>
-					<h1>Thanks!</h1>
-					<h3>@andrewrota</h3>
-				</section>
+            
+            <section>
+                    <h1><img style="height: 0.9em;" src="react.svg" alt=""> <img style="height: 0.9em;" src="like.svg" alt=""> <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
+                
+                    <!-- Source: http://commons.wikimedia.org/wiki/File:Bot%C3%B3n_Me_gusta.svg -->
+				    <div class="fragment fade-in">
+                        <br><br>
+                        <h2>Thanks!</h2>
+					    <h4>@andrewrota</h4>
+                    </div>
+                </section>
 
 			</div>
 

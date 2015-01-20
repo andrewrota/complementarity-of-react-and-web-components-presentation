@@ -58,6 +58,13 @@ pre code {
     font-size: 90% !important;
     line-height: 1.1 !important;
 }
+pre.inline-code {
+    display: inline-block;
+    margin-left: 50px;
+    width: 40%;
+    line-height: 1.5em;
+    vertical-align: middle;
+}
 pre.element-list {
     font-size: 40%;
     float: left;
@@ -101,11 +108,38 @@ div.component-block-wrapper {
 }
 
 div.component-block-wrapper.width-15 {
-    width: 16.5%;
+    width: 40%;
+    font-size: 70%;
 }
 
 div.component-block-wrapper.width-33 {
-    width: 33%;
+    width: 27.5%;
+    margin-left: 4.0%;
+    margin-right:4.0%;
+}
+
+div.component-block-wrapper.first {
+     margin-left: 0;
+}
+
+div.component-block-wrapper.last {
+     margin-right: 0;
+}
+
+div.component-group.first {
+     margin-left: 0;
+}
+
+div.component-group.last {
+     margin-right: 0;
+}
+
+
+div.component-group {
+    display: inline-block;
+    width: 28%;
+    float: left;
+    margin: 0 4%;
 }
 
 div.component-block h4 {
