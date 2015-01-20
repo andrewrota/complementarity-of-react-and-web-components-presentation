@@ -324,25 +324,7 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
 <a href="https://github.com/kunalnagar/facebook-activity-feed" target="_blank">&lt;facebook-activity-feed&gt;</a><br>
 <a href="https://github.com/kunalnagar/facebook-like-box" target="_blank">&lt;facebook-like-box&gt;</a></div></pre>
                 </section>
-                <section>
-                    <h2>Custom Events</h2>
-                    <pre class="medium-code" style="margin-left: -50px;"><code>React.createClass({
-  render: function() {
-    return (
-      &lt;paper-toast ref=&quot;myCustomElement&quot; text=&quot;Hello, World&quot; opened&gt;&lt;/paper-toast&gt;
-    );
-  },
-  componentDidMount: function() {
-     this.refs.myCustomElement.getDOMNode()
-       .addEventListener('core-overlay-close-completed', doSomething);
-  },
-  componentWillUnmount: function() {
-     this.refs.myCustomElement.getDOMNode()
-       .removeEventListener('core-overlay-close-completed', doSomething);
-  }
-});
-                    </code></pre>
-                </section>
+                
                 <section>
                     <h3>Best Practices for Building<br>Web Components for <strike>&nbsp; &nbsp;React.js&nbsp; &nbsp;</strike> Anything</h3>
                 </section>
@@ -395,7 +377,25 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
                             <h3>Events <pre class="inline-code"><code>      &lt;paper-toast onClick={this.handleClick}&gt;</code></pre></h3>
                     </div>
                 </section>
-                
+                <section>
+                    <h2>Custom Events</h2>
+                    <pre class="medium-code" style="margin-left: -50px;"><code>React.createClass({
+  render: function() {
+    return (
+      &lt;paper-toast ref=&quot;myCustomElement&quot; text=&quot;Hello, World&quot; opened&gt;&lt;/paper-toast&gt;
+    );
+  },
+  componentDidMount: function() {
+     this.refs.myCustomElement.getDOMNode()
+       .addEventListener('core-overlay-close-completed', doSomething);
+  },
+  componentWillUnmount: function() {
+     this.refs.myCustomElement.getDOMNode()
+       .removeEventListener('core-overlay-close-completed', doSomething);
+  }
+});
+                    </code></pre>
+                </section>
                 <section>
                     <h3>Not All Web Components <span style="white-space: nowrap">Are Created Equal</span></h3>
                 </section>
@@ -531,7 +531,7 @@ Module build failed:Error: Lower case component<br>names (paper-button) are no l
 				    <div class="fragment fade-in">
                         <br><br>
                         <h2>Thanks!</h2>
-					    <h4>@andrewrota</h4>
+                        <h4><a href="http://www.twitter.com/andrewrota" target="_blank">@AndrewRota</a></h4>
                     </div>
                 </section>
 
