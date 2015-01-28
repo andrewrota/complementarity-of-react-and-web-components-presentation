@@ -54,7 +54,7 @@
 						<small>React.js Conf 2015 | <a target="_blank" href="http://www.twitter.com/andrewrota">@AndrewRota</a></small>
 					</p>
 				</section>
-                
+
                 <section>
                     <a target="_blank" href="http://commons.wikimedia.org/wiki/File:January_2015_nor%27easter_snowfall_in_Watertown,_MA.jpg"><img src="blizzard.jpg" alt="Blizzard of 2015"></a>
                 <!-- Image cc-sa 3.0 by Aria1561 -->
@@ -85,7 +85,7 @@
 
                 <section>
                     <h3>Custom Elements</h3><br>
-                    <pre class="big-code"><code data-trim class="html">&lt;my-element&gt;Hello World.&lt;/my-element&gt;</code></pre>
+                    <pre class="big-code"><code data-trim class="markdown">&lt;my-element&gt;Hello World.&lt;/my-element&gt;</code></pre>
                     <br>
                     <pre class="big-code"><code data-trim class="javascript">var MyElement = document.registerElement('my-element', {
     prototype: Object.create(HTMLElement.prototype)
@@ -113,9 +113,20 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                     <script>(function(){var s = document.getElementById('my-first-element').createShadowRoot();s.innerHTML += '<style>p { color: red;}</style>';s.innerHTML += '<p>Shadow DOM.</p>';}());</script>
 
                 </section>
+                <section>
+                    <h3>Shadow DOM</h3>
+                    <br>
+                    <pre class="big-code" style="margin-left: -25px"><code data-trim class="javascript">// Create Shadow Root
+var s = document.getElementById('my-element').createShadowRoot();
+
+// Add Styles and Text
+s.innerHTML += '&lt;style&gtp { color: red; }&lt;/style&gt';</code></pre>
+                </section>
+                
+                
                 
                 <section>
-                    <img style="max-width: 100%" src="videoelement2.gif" alt="User agent shadow DOM">
+                    <img style="max-width: 100%" class="animated-gif" src="videoelement2.gif" alt="User agent shadow DOM">
                 </section>
                 
                 
@@ -665,10 +676,14 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
 				]
 			});
 
-		</script>
+Reveal.addEventListener('slidechanged', gif);
 
-	</body>
-</html>
+function gif(event) {
+    var img = event.currentSlide.querySelector('.animated-gif');
+    if(img) {
+        img.setAttribute('src', img.getAttribute('src'));
+    }
+}
 
 
 		</script>
