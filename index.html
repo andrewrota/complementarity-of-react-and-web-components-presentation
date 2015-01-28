@@ -47,7 +47,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-                <section>
+                <section data-background="reactbackground.png">
 					<h3>The Complementarity of</h3>
 					<h2>React.js and Web Components</h2>
 					<p>
@@ -55,16 +55,16 @@
 					</p>
 				</section>
 
-                <section>
+                <section data-background="reactbackground2.png">
                     <a target="_blank" href="http://commons.wikimedia.org/wiki/File:January_2015_nor%27easter_snowfall_in_Watertown,_MA.jpg"><img src="blizzard.jpg" alt="Blizzard of 2015"></a>
                 <!-- Image cc-sa 3.0 by Aria1561 -->
                 </section>
 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h1>I ❤ <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
                 </section>
 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>Web Components</h2>
                     <blockquote style="float: left; width: 70%; margin-right: 2%;">
                         Web Components usher in a <strong>new era</strong> of web development based on <strong>encapsulated and interoperable</strong> custom elements that extend HTML itself. — <span class="attr"><a href="https://www.polymer-project.org/" target="_blank">Polymer Project</a></span>
@@ -72,7 +72,7 @@
                     <img style="float: left; width: 20%; height: 50%;" src="webcomponents.svg" />
                 </section>
 
-                <section>
+                <section data-background="reactbackground2.png">
                     <div style="text-align: center;">
                             <h3 class="fragment grow" data-fragment-index="2">Custom Elements</h3>
                             <h3 class="fragment grow" data-fragment-index="2">Shadow DOM</h3>
@@ -83,7 +83,7 @@
                     </div>
                 </section>
 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Custom Elements</h3><br>
                     <pre class="big-code"><code data-trim class="markdown">&lt;my-element&gt;Hello World.&lt;/my-element&gt;</code></pre>
                     <br>
@@ -92,12 +92,12 @@
 });</code></pre>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Shadow DOM</h3>
                     <pre class="big-code"><code data-trim class="html">&lt;div id="my-element"&gt;&lt;/div&gt;
 &lt;p&gt;Light DOM.&lt;/p&gt;</code></pre>
                     <br>
-                    <pre class="big-code"><code data-trim class="javascript">// Create Shadow Root
+                    <pre class="big-code" style="margin-left: -2%"><code data-trim class="javascript">// Create Shadow Root
 var s = document.getElementById('my-element').createShadowRoot();
 // Add Styles and Text
 s.innerHTML += '&lt;style&gtp { color: red; }&lt;/style&gt';
@@ -113,10 +113,10 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                     <script>(function(){var s = document.getElementById('my-first-element').createShadowRoot();s.innerHTML += '<style>p { color: red;}</style>';s.innerHTML += '<p>Shadow DOM.</p>';}());</script>
 
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Shadow DOM</h3>
                     <br>
-                    <pre class="big-code" style="margin-left: -25px"><code data-trim class="javascript">// Create Shadow Root
+                    <pre class="big-code" style="margin-left: -2%"><code data-trim class="javascript">// Create Shadow Root
 var s = document.getElementById('my-element').createShadowRoot();
 
 // Add Styles and Text
@@ -125,16 +125,16 @@ s.innerHTML += '&lt;style&gtp { color: red; }&lt;/style&gt';</code></pre>
                 
                 
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <img style="max-width: 100%" class="animated-gif" src="videoelement2.gif" alt="User agent shadow DOM">
                 </section>
                 
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <pre class="medium-code"><code class="html">&lt;my-custom-element customAttribute=&quot;foo&quot;&gt;&lt;/my-custom-element&gt;</code></pre>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <pre class="medium-code"><code class="html">&lt;my-custom-element customAttribute=&quot;foo&quot;&gt;
   &lt;!-- SHADOW DOM --&gt;
   &lt;style&gt;p { color: red; }&lt;/style&gt;
@@ -147,11 +147,11 @@ s.innerHTML += '&lt;style&gtp { color: red; }&lt;/style&gt';</code></pre>
 &lt;/my-custom-element&gt;</code></pre>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Web Components are portable, because their API is the web platform itself.</h3>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <div style="text-align: center;">
                             <h3><pre class="inline"><code class="markup">&lt;input type="text" /&gt;</code></pre></h3>
                             <h3><pre class="inline"><code class="markup">&lt;a href="http://conf.reactjs.com/"&gt;Link!&lt;/a&gt;</code></pre></h3>
@@ -162,11 +162,11 @@ s.innerHTML += '&lt;style&gtp { color: red; }&lt;/style&gt';</code></pre>
                     </div>
                 </section>
 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h1>I ❤ <img style="height: 0.9em;" src="react.svg" alt=""></h1>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <div style="text-align: center;">
                             <h3>Virtual DOM</h3>
                             <h3>One-Way Data Flow</h3>
@@ -177,11 +177,11 @@ s.innerHTML += '&lt;style&gtp { color: red; }&lt;/style&gt';</code></pre>
                     </div>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h1><img style="height: 0.9em;" src="react.svg" alt=""> ? <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
                 </section>
 
-                <section>
+                <section data-background="reactbackground2.png">
                     <blockquote class="big-quote">
                         <p>&ldquo;I definitely think it's the <strong style="white-space: nowrap">wrong programming paradigm</strong>; I really hope that <span style="white-space: nowrap">[web components]</span> <strong>do not succeed</strong>.&rdquo;</p>
                         <footer>
@@ -190,15 +190,15 @@ s.innerHTML += '&lt;style&gtp { color: red; }&lt;/style&gt';</code></pre>
                     </blockquote>
                 </section>
 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h1><img style="height: 0.9em;" src="react.svg" alt=""> <img style="height: 0.9em;" src="Broken_heart.svg" alt=""> <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>React or Web Components: Pick One?</h3>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <div style="text-align: center; float: left; width: 40%;">
                         <h1><img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
                         <hr width="80%">
@@ -221,7 +221,7 @@ s.innerHTML += '&lt;style&gtp { color: red; }&lt;/style&gt';</code></pre>
                             <h5>Client + Server Rendering</h5>
                     </div>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <div style="text-align: center; float: left; width: 40%;">
                         <h1><img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
                         <hr width="80%">
@@ -245,7 +245,7 @@ s.innerHTML += '&lt;style&gtp { color: red; }&lt;/style&gt';</code></pre>
                     </div>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2 style="width: 100%; border: 1px solid white; height: 100px; line-height: 100px;">&lt;React/&gt;</h2>
                     <div class="first width-33 component-block-wrapper">
                         <div class="width-33 component-block">
@@ -300,17 +300,17 @@ s.innerHTML += '&lt;style&gtp { color: red; }&lt;/style&gt';</code></pre>
                     </div>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                 <pre class="big-code"><code data-trim class="javascript">React.render(
   &lt;my-custom-element&gt;Web Components!!&lt;/my-custom-element&gt;,
   document.getElementById(&#39;root&#39;)
 );</code></pre>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <pre class="big-code error">ERROR in ./src/js/init.js<br>
 Module build failed:Error: Lower case component<br>names (my-custom-element) are no longer<br>supported in JSX: See<br>http://fb.me/react-jsx-lower-case</pre>
                 </section>
-<!--                 <section>
+<!--                 <section data-background="reactbackground2.png">
                     <blockquote>
                         <p>&ldquo;The React element produced by JSX can be either a React class that exists in the local scope or a global scope HTML/SVG element depending on a convention.&rdquo;</p>
                         <footer>
@@ -318,7 +318,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                         </footer>
                     </blockquote>
                 </section> -->
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>&ldquo;The Whitelist Problem&rdquo;</h3>
                     <blockquote>
                         <p>&ldquo;<span style="text-transform: capitalize;">every</span> time there's a new HTML/SVG tag, you can't use it until we add it to the whitelist. You can't add it to the whitelist until you update your existing codebase. For example, we recently added the picture tag. Without a codemod something like this would've broken:</p>
@@ -329,7 +329,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                         </footer>
                     </blockquote>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>v0.12-rc1</h3>
                     <blockquote>
                         <p>&ldquo;To address this, we decided on a convention:<br><strong>All JSX tags that start with a lower-case letter or contain a dash are treated as HTML.</strong></p>
@@ -339,7 +339,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                         </footer>
                     </blockquote>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <blockquote class="big-quote">
                         <p>&ldquo;<span style="text-transform: capitalize;">The</span> Web is continuously evolving.&rdquo;</p>
                         <footer>
@@ -347,31 +347,31 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                         </footer>
                     </blockquote>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Goodbye, Whitelist</h3>
                     <img src="removewhitelist.png" alt="">
                     <span style="clear: both; float: right; font-size: 60%;">— <a href="https://github.com/facebook/react/pull/2830/files">Removed unknown tag warning/whitelist. #2830</a></span>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Goodbye, Warning</h3>
                     <img src="removewarning.png" alt="">
                     <span style="clear: both; float: right; font-size: 60%;">— <a href="https://github.com/facebook/react/pull/2830/files">Removed unknown tag warning/whitelist. #2830</a></span>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Hello, Custom Elements!</h3>
                 <pre class="big-code"><code data-trim class="javascript">React.render(
   &lt;my-custom-element&gt;Web Components!!&lt;/my-custom-element&gt;,
   document.getElementById(&#39;root&#39;)
 );</code></pre>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Hello, Custom Elements!</h3>
                     <pre class="big-code"><code data-trim class="javascript">React.render(
   React.createElement('my-custom-element', null, 'Web Components!!'),
   document.getElementById('root')
 );</code></pre>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                 <pre class="element-list fragment grow" data-fragment-index="2"><div class="fragment shrink" data-fragment-index="3"><a href="https://github.com/x-tag/switch" target="_blank">&lt;x-switch&gt;</a><br>
 <a href="https://github.com/x-tag/accordion" target="_blank">&lt;x-accordion&gt;</a><br>
 <a href="https://github.com/x-tag/flipbox" target="_blank">&lt;x-flipbox&gt;</a><br>
@@ -405,13 +405,13 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
 <a href="https://github.com/stevenrskelton/sortable-table" target="_blank">&lt;sortable-table&gt;</a><br>
 <a href="https://github.com/garstasio/ajax-form" target="_blank">&lt;ajax-form&gt;</a></div></pre>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Best Practices for Building<br>Web Components for React.js</h3>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Best Practices for Building<br>Web Components for <strike>&nbsp; &nbsp;React.js&nbsp; &nbsp;</strike> Anything</h3>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>Web Components Should Be&hellip;</h2><br>
                     <div style="text-align: left;">
                             <h3>- Small</h3>
@@ -423,7 +423,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                 
                 
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>Web Components Should Be&hellip;</h2><br>
                     <div style="text-align: left;">
                             <h3>- Small</h3>
@@ -433,12 +433,12 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                     </div>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>Good Idea</h2><br>
                     <pre class="big-code" style="text-align: center;"><code class="markdown">&lt;my-button&gt;&lt;/my-button&gt;</code></pre>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>Bad Idea</h2><br>
                     <pre class="big-code" style="text-align: center;"><code class="markdown">&lt;my-application&gt;&lt;/my-application&gt;</code></pre>
                 </section>
@@ -447,7 +447,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                 
                 
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>Web Components Should Be&hellip;</h2><br>
                     <div style="text-align: left;">
                             <h3 style="opacity: .5;">- Small</h3>
@@ -457,7 +457,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                     </div>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>Component API</h2><br>
                     <div style="text-align: left;">
                             <h3>Attributes <pre class="inline-code"><code>&lt;paper-toast text=&quot;Hello, world&quot;&gt;</code></pre></h3>
@@ -465,7 +465,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                             <h3>Events <pre class="inline-code"><code>      &lt;paper-toast onClick={this.handleClick}&gt;</code></pre></h3>
                     </div>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>Custom Events</h2>
                     <pre class="medium-code" style="margin-left: -50px;"><code class="actionscript">React.createClass({
   render: function() {
@@ -484,23 +484,23 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
 });
                     </code></pre>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Not All Web Components <span style="white-space: nowrap">Are Created Equal</span></h3>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <div style="text-align: center;">
                         <pre class="big-code inline"><code data-trim class="markdown">&lt;google-map&gt;&lt;/google-map&gt;</code></pre>
                     </div>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <img src="googlemaperror.png" alt="">
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <img src="googlemapscripts2.png" alt="">
                     <h3>Not cool.</h3>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>Web Components Should Be&hellip;</h2><br>
                     <div style="text-align: left;">
                             <h3 style="opacity: .5;">- Small</h3>
@@ -510,7 +510,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                     </div>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <blockquote class="big-quote">
                         <p>&ldquo;Try to keep as many of your components as possible stateless.&rdquo;</p>
                         <footer>
@@ -520,7 +520,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                     </blockquote>
                 </section>
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>Web Components Should Be&hellip;</h2><br>
                     <div style="text-align: left;">
                             <h3 style="opacity: .5;">- Small</h3>
@@ -530,11 +530,11 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                     </div>
                 </section>
             
-                <section>
+                <section data-background="reactbackground2.png">
                     <h3>Your application is only as fast as your slowest component.</h3>
                 </section>
             
-            <section>
+            <section data-background="reactbackground2.png">
                     <h2>Web Components Should Be&hellip;</h2><br>
                     <div style="text-align: left;">
                             <h3>- Small</h3>
@@ -544,11 +544,11 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                     </div>
                 </section>
 
-				<section>
+				<section data-background="reactbackground2.png">
                     <h3 class="fragment semi-fade-out" data-fragment-index="2">tldr; Web Components should seem no different than native DOM elements.</h3>
                     <h3 class="fragment" data-fragment-index="2">corollary: Use Web Components in React.js as if they were native DOM elements.</h3>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2 style="width: 100%; border: 1px solid white; height: 100px; line-height: 100px;">&lt;React/&gt;</h2>
                     <div class="first width-33 component-block-wrapper">
                         <div class="width-33 component-block">
@@ -613,7 +613,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                 
                 
                 
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>React within Web Components?</h2><br><br>
                     <div style="text-align: left;">
                             <h3></h3>
@@ -622,7 +622,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                             <h3></h3>
                     </div>
                 </section>
-                <section>
+                <section data-background="reactbackground2.png">
                     <h2>The Future (?)</h2><br>
                     <div style="text-align: left;">
                             <h3>Custom Attribute Support <span style="opacity: .5;">(<a href="https://github.com/facebook/react/issues/2746" target="_blank">Issue #2746</a>)</span></h3>
@@ -630,7 +630,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                     </div>
                 </section>
             
-            <section>
+            <section data-background="reactbackground2.png">
                     <h1><img style="height: 0.9em;" src="react.svg" alt=""> <img style="height: 0.9em;" src="like.svg" alt=""> <img style="height: 0.9em;" src="webcomponents.svg" alt=""></h1>
                 
                     <!-- Source: http://commons.wikimedia.org/wiki/File:Bot%C3%B3n_Me_gusta.svg -->

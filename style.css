@@ -25,6 +25,7 @@ pre code {
     border: none !important;
     background: transparent !important;
     font-style: normal !important;
+    box-shadow: 0 0 0 !important;
 }
 .reveal blockquote footer {
     text-align: right !important;
