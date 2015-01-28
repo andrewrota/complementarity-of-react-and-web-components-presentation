@@ -112,6 +112,11 @@ div.component-block-wrapper.width-15 {
     font-size: 70%;
 }
 
+div.component-block-wrapper.width-7 {
+    width: 20%;
+    font-size: 50%;
+}
+
 div.component-block-wrapper.width-33 {
     width: 27.5%;
     margin-left: 4.0%;
