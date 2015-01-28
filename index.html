@@ -56,7 +56,7 @@
 				</section>
                 
                 <section>
-                    <a target="_blank" href="http://commons.wikimedia.org/wiki/File:January_2015_nor%27easter_snowfall_in_Watertown,_MA.jpg"></a><img src="blizzard.jpg" alt="Blizzard of 2015"></a>
+                    <a target="_blank" href="http://commons.wikimedia.org/wiki/File:January_2015_nor%27easter_snowfall_in_Watertown,_MA.jpg"><img src="blizzard.jpg" alt="Blizzard of 2015"></a>
                 <!-- Image cc-sa 3.0 by Aria1561 -->
                 </section>
 
@@ -112,6 +112,10 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                     <br>
                     <script>(function(){var s = document.getElementById('my-first-element').createShadowRoot();s.innerHTML += '<style>p { color: red;}</style>';s.innerHTML += '<p>Shadow DOM.</p>';}());</script>
 
+                </section>
+                
+                <section>
+                    <img style="max-width: 100%" src="videoelement2.gif" alt="User agent shadow DOM">
                 </section>
                 
                 
@@ -293,7 +297,7 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code></pre>
                 </section>
                 <section>
                     <pre class="big-code error">ERROR in ./src/js/init.js<br>
-Module build failed:Error: Lower case component<br>names (my-custom-element) are no longer supported<br>in JSX: See http://fb.me/react-jsx-lower-case</pre>
+Module build failed:Error: Lower case component<br>names (my-custom-element) are no longer<br>supported in JSX: See<br>http://fb.me/react-jsx-lower-case</pre>
                 </section>
 <!--                 <section>
                     <blockquote>
@@ -445,7 +449,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                 <section>
                     <h2>Component API</h2><br>
                     <div style="text-align: left;">
-                            <h3>Attributes <pre class="inline-code"><code>&lt;paper-toast text=&quot;Hello, world&quot; opened&gt;</code></pre></h3>
+                            <h3>Attributes <pre class="inline-code"><code>&lt;paper-toast text=&quot;Hello, world&quot;&gt;</code></pre></h3>
                             <h3>Methods <pre class="inline-code"><code>   getDOMNode().toggle()</code></pre></h3>
                             <h3>Events <pre class="inline-code"><code>      &lt;paper-toast onClick={this.handleClick}&gt;</code></pre></h3>
                     </div>
@@ -455,7 +459,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                     <pre class="medium-code" style="margin-left: -50px;"><code class="actionscript">React.createClass({
   render: function() {
     return (
-      &lt;paper-toast ref=&quot;myCustomElement&quot; text=&quot;Hello, World&quot; opened&gt;&lt;/paper-toast&gt;
+      &lt;paper-toast ref=&quot;myCustomElement&quot; text=&quot;Hello, World&quot;&gt;&lt;/paper-toast&gt;
     );
   },
   componentDidMount: function() {
@@ -553,25 +557,23 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                     <div class="first component-group">
                         <div class="first width-15 component-block-wrapper">
                             <div class="width-15 component-block">
-                                <h4>DOM</h4>
-                            </div>
+                                <h4 style="color: #1b91ff;">DOM</h4>                            </div>
                         </div>
                         <div class="width-15 component-block-wrapper">
                             <div class="width-15 component-block">
-                                <h4>DOM</h4>
-                            </div>
+                                <h4 style="color: #1b91ff;">DOM</h4>                            </div>
                         </div>
                     
                     </div>
                     <div class="component-group">
                         <div class="first width-15 component-block-wrapper">
                             <div class="width-15 component-block">
-                                <h4>DOM</h4>
+                                <h4 style="color: #1b91ff;">DOM</h4>
                             </div>
                         </div>
                         <div class="width-15 component-block-wrapper">
                             <div class="width-15 component-block">
-                                <h4>WC</h4>
+                                <h4 style="color: #ff2c2d">WC</h4>
                             </div>
                         </div>
                     
@@ -579,13 +581,12 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                     <div class="last component-group">
                         <div class="first width-15 component-block-wrapper">
                             <div class="width-15 component-block">
-                                <h4>WC</h4>
+                                <h4 style="color: #ff2c2d">WC</h4>
                             </div>
                         </div>
                         <div class="width-15 component-block-wrapper">
                             <div class="width-15 component-block">
-                                <h4>DOM</h4>
-                            </div>
+                                <h4 style="color: #1b91ff;">DOM</h4>                            </div>
                         </div>
                     
                     </div>
