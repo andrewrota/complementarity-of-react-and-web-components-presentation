@@ -321,9 +321,7 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                 <section data-background="reactbackground2.png">
                     <h3>&ldquo;The Whitelist Problem&rdquo;</h3>
                     <blockquote>
-                        <p>&ldquo;<span style="text-transform: capitalize;">every</span> time there's a new HTML/SVG tag, you can't use it until we add it to the whitelist. You can't add it to the whitelist until you update your existing codebase. For example, we recently added the picture tag. Without a codemod something like this would've broken:</p>
-                        <pre class="medium-code" style="margin-left: -15px;"><code>var picture = React.createClass(); return &lt;picture &#47;&gt;;</code></pre>
-                        <p style="text-align: right;">&rdquo;</p>
+                        <p>&ldquo;<span style="text-transform: capitalize;">every</span> time there's a new HTML/SVG tag, you can't use it until we add it to the whitelist. You can't add it to the whitelist until you update your existing codebase.&rdquo;</p>
                         <footer>
                             — <cite><a href="https://gist.github.com/sebmarkbage/f1f4ba40816e7d7848ad">Sebastian Markbåge</a> (Oct. 5, 2014)</cite>
                         </footer>
@@ -359,14 +357,14 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                 </section>
                 <section data-background="reactbackground2.png">
                     <h3>Hello, Custom Elements!</h3>
-                <pre class="big-code"><code data-trim class="javascript">React.render(
+                <pre style="margin-left: -5%;" class="big-code"><code data-trim class="javascript">React.render(
   &lt;my-custom-element&gt;Web Components!!&lt;/my-custom-element&gt;,
   document.getElementById(&#39;root&#39;)
 );</code></pre>
                 </section>
                 <section data-background="reactbackground2.png">
                     <h3>Hello, Custom Elements!</h3>
-                    <pre class="big-code"><code data-trim class="javascript">React.render(
+                    <pre style="margin-left: -5%;" class="big-code"><code data-trim class="javascript">React.render(
   React.createElement('my-custom-element', null, 'Web Components!!'),
   document.getElementById('root')
 );</code></pre>
@@ -493,11 +491,10 @@ Module build failed:Error: Lower case component<br>names (my-custom-element) are
                     </div>
                 </section>
                 <section data-background="reactbackground2.png">
-                    <img src="googlemaperror.png" alt="">
+                    <img style="width: 100%" src="googlemaperror.png" alt="">
                 </section>
                 <section data-background="reactbackground2.png">
                     <img src="googlemapscripts2.png" alt="">
-                    <h3>Not cool.</h3>
                 </section>
                 
                 <section data-background="reactbackground2.png">
